@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+
+    </head>
+    <body>
+        <div class="container">
+
+
+
+			<section class="main">
+				<form class="form-1">
+					<p class="field">
+            {{form.email(placeholder="Логин или email")}}
+						<i class="icon-user icon-large"></i>
+					</p>
+						<p class="field">
+              {{form.password(placeholder="Пароль")}}
+							<i class="icon-lock icon-large"></i>
+					</p>
+					<p class="submit">
+						<button type="submit" name="submit"><i class="icon-arrow-right icon-large"></i></button>
+            {{form.submit}}
+					</p>
+				</form>
+			</section>
+        </div>
+    </body>
+</html>

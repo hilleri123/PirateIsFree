@@ -1,0 +1,26 @@
+
+<form method="post" action="/" id="download_form">
+
+  {{ form.csrf_token }}
+
+  <div class="dd1">Pirate</div>
+
+  {% for field in form if field.name != "csrf_token" and not field.type in ['CSRFTokenField'] and field.name != "submit" and field.name != "cancel" %}
+      {% if not field.type in ['HiddenField'] %}
+	      <div class="dd2 corner">{{ field.label() }}</div>
+      {% endif %}
+	    <div class="corner">
+        {% if field.name in ['body'] %}
+          {{ field(cols="100", rows="20") }}
+        {% else %}
+          {{ field(size=60, class_="") }}
+        {% endif %}
+	      {% for error in field.errors %}
+		      {{ error }}
+	      {% endfor %}
+	    </div>
+  {% endfor %}
+  <div class="cancel0">{{ form.submit(class_="button7") }}</div>
+  <div class="cancel">{{ form.cancel(class_="button7") }}</div>
+
+</form>
